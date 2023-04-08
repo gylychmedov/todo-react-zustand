@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: nunito_bold;
+        src: url("../assets/fonts/Nunito-Bold.ttf");
+        font-display: "swap";
+    }
+
+    @font-face {
+        font-family: nunito_regular;
+        src: url("../assets/fonts/Nunito-Regular.ttf");
+        font-display: "swap";
+    }
+
+    @font-face {
+        font-family: nunito_light;
+        src: url("../assets/fonts/Nunito-Light.ttf");
+        font-display: "swap";
+    }
+
+    body {
+        @apply font-nunito_regular
+    }
+
+    .flex-center {
+        @apply flex items-center justify-center
+    }
+
+    .flex-center-x {
+        @apply flex items-center
+    }
+
+    input {
+        @apply outline-none
+    }
+
+    .input-gray {
+        @apply bg-gray-800 rounded-md px-3 py-2
+    }
+
+    .button-gray {
+        @apply bg-indigo-800 rounded-md px-4 py-2
+    }
+}
