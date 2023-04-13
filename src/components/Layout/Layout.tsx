@@ -3,8 +3,10 @@ import { ILayout } from "../../interfaces/Elements/ILayout";
 
 const Layout: React.FC<ILayout> = ({ children }) => {
   return (
-    <main className=" bg-gray-900 text-white w-screen min-h-screen">
-      <section className="px-4 lg:px-8 py-4">{children}</section>
+    <main className="w-screen min-h-screen bg-gray-100 bg-opacity-50">
+      <section className="px-4 lg:px-8 py-4 container mx-auto">
+        {children}
+      </section>
     </main>
   );
 };

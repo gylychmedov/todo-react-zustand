@@ -2,5 +2,12 @@ export interface ITodo {
   id: number;
   title: string;
   completed: boolean;
-  category_id: number;
+  status: EStatus;
+  completion_date: string;
+}
+
+export enum EStatus {
+  TODO = "Todo",
+  PENDING = "Pending",
+  DONE = "Done",
 }

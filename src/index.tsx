@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import TodoPage from "./pages/todo";
 import "./styles/tailwind.css";
+import { RouterProvider } from "react-router-dom";
+import routes from "./common/routes";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <TodoPage />
+    <RouterProvider router={routes} />
   </React.StrictMode>
 );
 
