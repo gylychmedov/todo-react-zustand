@@ -4,8 +4,8 @@ import { ITab } from "../../interfaces/Tab/ITab";
 import tabs from "../../common/data/tabs";
 import Tabs from "../../components/Todo/Tabs";
 import Todos from "../../components/Todo/Todos";
-import { AnimatePresence } from "framer-motion";
 import AddTodo from "../../components/Todo/AddTodo";
+import { Toaster } from "react-hot-toast";
 
 const TodoPage = () => {
   const [activeTab, setActiveTab] = useState<ITab>(tabs[0]);
@@ -24,12 +24,11 @@ const TodoPage = () => {
             handleTab={handleTab}
             addTodoToggle={handleAddTodoToggle}
           />
-          <AnimatePresence mode="wait">
-            {addTodoIsOpen && <AddTodo />}
-          </AnimatePresence>
+          <AddTodo isOpen={addTodoIsOpen} />
           <Todos activeTab={activeTab} />
         </section>
       </section>
+      <Toaster />
     </Layout>
   );
 };

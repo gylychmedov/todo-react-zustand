@@ -43,9 +43,22 @@ export const useTodo = create<ITodoState>((set) => ({
   toggleComplete: (todo_id) =>
     set((state) => ({
       todos: state.todos.map((todo) =>
-        todo.id == todo_id
-          ? { ...todo, completed: !todo.completed, status: EStatus.DONE }
+        todo.id === todo_id
+          ? {
+              ...todo,
+              completed: !todo.completed,
+              status: todo.completed ? EStatus.TODO : EStatus.DONE,
+            }
           : todo
       ),
+    })),
+  changeStatus: (todo_id, status) =>
+    set((state) => ({
+      todos: state.todos.map((todo) => {
+        if (todo.id == todo_id) {
+          return { ...todo, status, completed: status == EStatus.DONE };
+        }
+        return todo;
+      }),
     })),
 }));

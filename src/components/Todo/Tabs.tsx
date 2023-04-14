@@ -18,7 +18,7 @@ const Tabs: React.FC<ITabsProps> = ({
             className={`p-3 hover:border-gray-300 cursor-pointer border-b-2 border-transparent relative`}
           >
             <AnimatePresence>
-              {tab.name == activeTab.name && (
+              {tab.name === activeTab.name && (
                 <motion.div
                   layoutId="tab"
                   className="absolute bottom-0 left-0 w-full h-0.5 bg-black"
