@@ -10,7 +10,7 @@ const Tabs: React.FC<ITabsProps> = ({
 }) => {
   return (
     <aside className="w-full flex justify-between items-center">
-      <div className="flex-center-x space-x-7">
+      <div className="flex-center-x space-x-2 xl:space-x-7">
         {tabs.map((tab) => (
           <div
             key={tab.name}
@@ -29,9 +29,12 @@ const Tabs: React.FC<ITabsProps> = ({
           </div>
         ))}
       </div>
-      <button onClick={addTodoToggle} className="button-black px-4 icon-text">
+      <button
+        onClick={addTodoToggle}
+        className="button-black px-2 xl:px-4 icon-text"
+      >
         <HiPlusSm size={18} />
-        <span>New task</span>
+        <span className="hidden md:block duration-200">New task</span>
       </button>
     </aside>
   );
