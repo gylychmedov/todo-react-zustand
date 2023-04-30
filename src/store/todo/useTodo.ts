@@ -1,8 +1,8 @@
 import { create } from "zustand";
-import { ITodoState } from "../../interfaces/Store/ITodoState";
+import { ITodoStore } from "../../interfaces/Store/ITodoStore";
 import { EStatus } from "../../interfaces/Todo/ITodo";
 
-export const useTodo = create<ITodoState>((set) => ({
+export const useTodo = create<ITodoStore>((set) => ({
   todos: [
     {
       id: 1,
@@ -55,8 +55,8 @@ export const useTodo = create<ITodoState>((set) => ({
   changeStatus: (todo_id, status) =>
     set((state) => ({
       todos: state.todos.map((todo) => {
-        if (todo.id == todo_id) {
-          return { ...todo, status, completed: status == EStatus.DONE };
+        if (todo.id === todo_id) {
+          return { ...todo, status, completed: status === EStatus.DONE };
         }
         return todo;
       }),

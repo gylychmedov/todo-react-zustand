@@ -49,7 +49,7 @@ const Todo: React.FC<ITodoProps> = ({ todo }) => {
         } px-4 py-1 rounded-md appearance-none outline-none`}
       >
         {statusList.map((status) => (
-          <option value={status} selected={status == todo.status}>
+          <option value={status} selected={status === todo.status}>
             {status}
           </option>
         ))}
